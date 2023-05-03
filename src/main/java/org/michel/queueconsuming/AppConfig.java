@@ -1,4 +1,4 @@
-package com.sensedia.queueconsuming;
+package org.michel.queueconsuming;
 
 import java.util.concurrent.Executor;
 
@@ -30,21 +30,21 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 //         return executor;
 //     }
 // }
-@Configuration
-@EnableScheduling
+// @Configuration
+// @EnableScheduling
 public class AppConfig {
 
-    private static final Logger logger = LoggerFactory.getLogger(AppConfig.class);
+    // private static final Logger logger = LoggerFactory.getLogger(AppConfig.class);
 
-    @Bean(name = "threadPoolTaskExecutor")
-    public ThreadPoolTaskExecutor threadPoolTaskExecutor() {
+    // @Bean(name = "threadPoolTaskExecutor")
+    // public ThreadPoolTaskExecutor threadPoolTaskExecutor() {
 
-        logger.info("configuring Scheduling...");
-        ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-        executor.setCorePoolSize(10);
-        executor.setMaxPoolSize(10);
-        executor.setThreadNamePrefix("default_task_executor_thread");
-        executor.initialize();
-        return executor;
-    }
+    //     logger.info("configuring Scheduling...");
+    //     ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+    //     executor.setCorePoolSize(10);
+    //     executor.setMaxPoolSize(10);
+    //     executor.setThreadNamePrefix("default_task_executor_thread");
+    //     executor.initialize();
+    //     return executor;
+    // }
 }
