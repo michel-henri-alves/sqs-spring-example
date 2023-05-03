@@ -2,9 +2,9 @@ package org.michel.queueconsuming;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-// import org.springframework.cloud.aws.autoconfigure.context.ContextStackAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
+
+import io.awspring.cloud.sqs.annotation.SqsListener;
 
 
 @SpringBootApplication
@@ -17,4 +17,8 @@ public class QueueConsumingApplication {
 		SpringApplication.run(QueueConsumingApplication.class, args);
 	}
 
+	@SqsListener("myqueue")
+    public void listen(String message) {
+        System.out.println(message);
+    }
 }
